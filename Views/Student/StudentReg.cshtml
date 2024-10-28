@@ -1,1 +1,87 @@
-﻿<h1>Mohit Jha</h1>
+﻿@model StudentRegistration.Core.Models.AddStudentViewModel
+@{
+    var message = ViewData["Message"] as string;
+}
+
+@{
+    var errormessage = ViewData["ErrorMessage"] as string;
+}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="card W-100">
+            <div class="card-header">
+                <h1>Student Registration</h1>
+            </div>
+            <div class="card-body py-4">
+
+                <form class="row g-3" method="post">
+                    <div class="col-md-6">
+                        <label for="StudentName" class="form-label">Student Name</label>
+                        <input type="text" class="form-control" id="StudentName" asp-for="StudentName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Age" class="form-label">Age</label>
+                        <input type="text" maxlength="2" class="form-control" id="Age" asp-for="Age">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" asp-for="Email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="MobileNumber" class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-control" id="MobileNumber" asp-for="MobileNumber">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Country" class="form-label">Select Country</label>
+                        <select id="Country" class="form-select" asp-for="Country">
+                            <option selected Value="0">--Select--</option>
+                            <option Value="India">India</option>
+                            <option Value="Shri Lanka">Shri Lanka</option>
+                            <option Value="Bhutan">Bhutan</option>
+                            <option Value="Bangladesh">Bangladesh</option>
+                            <option Value="United Kingdom">United Kingdom</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="State" class="form-label">Select State</label>
+                        <select id="State" class="form-select" asp-for="State">
+                            <option selected Value="0">--Select--</option>
+                            <option Value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option Value="Utter Pradesh">Utter Pradesh</option>
+                            <option Value="Gujrat">Gujrat</option>
+                            <option Value="Rajsthan">Rajsthan</option>
+                            <option Value="Jammu">Jammu</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="City" class="form-label">Select City</label>
+                        <select id="City" class="form-select" asp-for="City">
+                            <option selected Value="0">--Select--</option>
+                            <option Value="Bhopal">Bhopal</option>
+                            <option Value="Lakhnow">Lakhnow</option>
+                            <option Value="Gandhinagar">Gandhinagar</option>
+                            <option Value="Jaipur">Jaipur</option>
+                            <option Value="Shrinagar">Shrinagar</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="Address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="Address" placeholder="1234 Main St" asp-for="Address">
+                    </div>
+
+                    <div class="row py-3">
+
+                        <label id="Errormsg">@message</label>
+                        <label id="Errormsg">@errormessage</label>
+                        <div class="col-md-3 py-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
