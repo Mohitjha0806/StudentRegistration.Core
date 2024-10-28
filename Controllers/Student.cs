@@ -38,6 +38,7 @@ namespace StudentRegistration.Core.Controllers
             await dbContext.StudentReg.AddAsync(studentReg);
             await dbContext.SaveChangesAsync();
             try
+
             {
                 ViewData["Message"] = "Data Inserted Successfully";
                 return View();
