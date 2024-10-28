@@ -18,19 +18,19 @@
                 <form class="row g-3" method="post">
                     <div class="col-md-6">
                         <label for="StudentName" class="form-label">Student Name</label>
-                        <input type="text" class="form-control" id="StudentName" asp-for="StudentName">
+                        <input type="text" class="form-control" maxlength="30" id="StudentName" asp-for="StudentName">
                     </div>
                     <div class="col-md-6">
                         <label for="Age" class="form-label">Age</label>
-                        <input type="text" maxlength="2" class="form-control" id="Age" asp-for="Age">
+                        <input type="text" maxlength="2" class="form-control" maxlength="2" id="Age" asp-for="Age">
                     </div>
                     <div class="col-md-6">
                         <label for="Email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="Email" asp-for="Email">
+                        <input type="email" maxlength="30" class="form-control" id="Email" asp-for="Email">
                     </div>
                     <div class="col-md-6">
                         <label for="MobileNumber" class="form-label">Mobile Number</label>
-                        <input type="tel" class="form-control" id="MobileNumber" asp-for="MobileNumber">
+                        <input type="tel" maxlength="10" class="form-control" id="MobileNumber" asp-for="MobileNumber">
                     </div>
                     <div class="col-md-4">
                         <label for="Country" class="form-label">Select Country</label>
@@ -68,7 +68,7 @@
 
                     <div class="col-12">
                         <label for="Address" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="Address" placeholder="1234 Main St" asp-for="Address">
+                        <input type="text" class="form-control" id="Address" maxlength="300" placeholder="1234 Main St" asp-for="Address">
                     </div>
 
                     <div class="row py-3">

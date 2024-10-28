@@ -20,6 +20,7 @@ namespace StudentRegistration.Core.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> StudentReg(AddStudentViewModel viewModel)
         {
@@ -33,33 +34,26 @@ namespace StudentRegistration.Core.Controllers
                 State = viewModel.State,
                 City = viewModel.City,
                 Address = viewModel.Address,
-
             };
             await dbContext.StudentReg.AddAsync(studentReg);
             await dbContext.SaveChangesAsync();
+
             try
-
-            {
-                ViewData["Message"] = "Data Inserted Successfully";
-                return View();
-            }
+                {
+                    ViewData["Message"] = "Data Inserted Successfully";
+                    ModelState.Clear();
+                    return View(new AddStudentViewModel());
+                }
             catch (Exception)
-            {
-                ViewData["ErrorMessage"] = "Data Not Inserted";
-                throw;
-            }
-
+                {
+                    ViewData["ErrorMessage"] = "Data Not Inserted";
+                    throw;
+                }
         }
-
-
-
 
         public IActionResult Dashboard()
         {
             return View();
         }
-
-
-
     }
 }
