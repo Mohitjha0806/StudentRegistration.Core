@@ -35,6 +35,7 @@ namespace StudentRegistration.Core.Controllers
                 City = viewModel.City,
                 Address = viewModel.Address,
             };
+
             await dbContext.StudentReg.AddAsync(studentReg);
             await dbContext.SaveChangesAsync();
 

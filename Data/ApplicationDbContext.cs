@@ -7,8 +7,8 @@ namespace StudentRegistration.Core.Data
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-        }
 
+        }
         public DbSet<StudentReg> StudentReg {  get; set; }
     }
 }
